@@ -1,10 +1,15 @@
  <h1> Recipe List </h1>
 <hr>
+
+<h3>To create a new recipe simply click <a href="/recipes/new">Create.</a></h3>
+
 <% @recipes.each do |recipe|%>
     <div>
-    <h2><a href="/recipes/<%= @recipe.id %>"></a><%= recipe.name %></h3>
-     <h6> <%= recipe.meal_type %></h6>
+    <h2><a href="/recipes/<%= recipe.id %>"><%= recipe.name %></a></h3>
+     <h6><%= recipe.meal_type %></h6><br>
    </div>
 <% end %>
+
+
 
 

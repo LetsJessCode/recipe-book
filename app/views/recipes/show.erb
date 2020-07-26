@@ -1,1 +1,19 @@
-<h1>Recipe Show Page</h1>
+  <h1><%= @recipe.name %> Recipe </h1>
+  <h6><%= @recipe.meal_type %></h6>
+<div>
+    <p> Serving: <%= @recipe.servings %></p>
+
+    <p> Prep Time: <%=  @recipe.prep_min %> minutes <%= @recipe.prep_hr %> hour(s)</p>
+    <p> Cook Time: <%= @recipe.time_min %> minutes <%= @recipe.time_hr %> hour(s)</p><br><br>
+    <p> Ingredients: <%= @recipe.ingredients %></p>
+    <p> Instructions: <%= @recipe.instructions %></p>
+
+    <%# </form>  %>
+</div>
+
+    <h3> Click <a href="/recipes/<%= @recipe.id %>/edit"> Edit </a> to update your <%= @recipe.name %> Recipe <br>
+    Click <a href="/recipes/index">Home</a> to go back to your Recipe List.
+    </h3>
+
+        
+

@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
 
     get '/recipes' do
-        @recipes = Recipe.all
+        @recipes = current_user.recipes
         erb :'recipes/index'
     end
 
@@ -11,19 +11,20 @@ class RecipesController < ApplicationController
     end
 
     post '/recipes' do
-        @recipe = Recipe.new(params[:recipe])
-           if @recipe.save
+        set_recipes
+        @recipe = current_user.recipes.build(params[:recipe])
+        if @recipe.save
                 redirect '/recipes'
-           else
+      else
              erb :'recipes/new'
         end 
     end
 
     get '/recipes/:id' do
-        @recipe = Recipe.find_by_id(params[:id])
-         if @recipe
+      set_recipes
+      if @recipe
             erb :'recipes/show'
-         else
+       else
             redirect '/recipes'
        end 
     end
@@ -33,20 +34,20 @@ class RecipesController < ApplicationController
         erb :'recipes/edit'
     end
 
-    patch 'recipes/:id' do
+    patch '/recipes/:id' do
         set_recipes
-        if @recipe.update(params[:recipe])
+     if @recipe.update(params[:recipe])
             redirect "/recipes/#{@recipe.id}"
         else
             erb :'recipes/edit'
-        end
+       end
     end
 
     delete '/recipes/:id' do
-        set_recipes
+      set_recipes
         @recipe.destroy
         redirect '/recipes'
-  end
+    end
   
     def set_recipes
         @recipe = Recipe.find_by_id(params[:id])

@@ -17,13 +17,13 @@
     <div class="wrapper">
         <nav>
       <ul>
-          <%# <% unless logged_in? %> %>
+          <% unless logged_in? %>
         <li><a href="/signup">New Account</a></li>       
         <li><a href="/login">Login</a></li>
-          <%# <% else %> %>
-        <%# <li><%= current_user.user[name] %></li> %>
+          <% else %>
+        <li><%= current_user.name %></li>
         <li><a href="/logout">Logout</a></li>
-        <%# <% end %> %>
+        <% end %>
       </ul>
     </nav>
         <%= yield %>
