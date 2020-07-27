@@ -1,16 +1,17 @@
 class RecipesController < ApplicationController
+ 
 
-    get '/recipes' do
+    get '/recipes' do #working!!!
         @recipes = current_user.recipes
         erb :'recipes/index'
     end
 
-    get '/recipes/new' do
+    get '/recipes/new' do ##working!!!
         @recipe = Recipe.new
         erb :'recipes/new'
     end
 
-    post '/recipes' do
+    post '/recipes' do #working!!!
         set_recipes
         @recipe = current_user.recipes.build(params[:recipe])
         if @recipe.save
@@ -20,7 +21,7 @@ class RecipesController < ApplicationController
         end 
     end
 
-    get '/recipes/:id' do
+    get '/recipes/:id' do #working!!! 
       set_recipes
       if @recipe
             erb :'recipes/show'
@@ -29,12 +30,16 @@ class RecipesController < ApplicationController
        end 
     end
 
-    get '/recipes/:id/edit' do
+    get '/recipes/:id/edit' do #working!!!
         set_recipes
-        erb :'recipes/edit'
+        if current_user 
+            erb :'recipes/edit'
+        else
+            redirect '/recipes'
+        end    
     end
 
-    patch '/recipes/:id' do
+    patch '/recipes/:id' do #working!!!
         set_recipes
      if @recipe.update(params[:recipe])
             redirect "/recipes/#{@recipe.id}"
@@ -43,13 +48,18 @@ class RecipesController < ApplicationController
        end
     end
 
-    delete '/recipes/:id' do
+    delete '/recipes/:id' do #working!!!
       set_recipes
         @recipe.destroy
         redirect '/recipes'
-    end
+      end 
+    
+    private
   
-    def set_recipes
+    def set_recipes #working!!!
         @recipe = Recipe.find_by_id(params[:id])
     end
 end
+
+
+## THIS CONTROLLER WORKS

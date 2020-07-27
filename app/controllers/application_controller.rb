@@ -1,15 +1,16 @@
 require './config/environment'
 
+
 class ApplicationController < Sinatra::Base
 
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions
-    set :session_secret, "super secrete"
-  end
+    set :session_secret, ENV['SINATRA_SECRET']
+  end 
 
-  get '/' do
+  get '/' do #
     erb :welcome
   end
 
