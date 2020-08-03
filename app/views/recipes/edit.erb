@@ -15,7 +15,7 @@
         </div>
         <div class="row">
             <div class="col s12 m4 l3">
-                <label for="time"><h5 class="bold">Cooking Time:</h5></label><br>
+                <label for="time"><h5 class="bold">Cook Time:</h5></label><br>
                 <input type="integer" name="recipe[time_hr]" value="<%= @recipe.time_hr %>" id="time_hr"><br>
                 <input type="integer" name="recipe[time_min]" value="<%= @recipe.time_min %>" id="time_min"><br><br>  
             </div>
@@ -27,15 +27,14 @@
         <div class="col s12 m3">
             <div class="input-field col s12">
              <label for="ingredients"><h5 class="bold">Ingredient(s):</h5></label><br><br>
-                <textarea name="recipe[ingredients]" id="ingredients" class="materialize-textarea" value="<%= @recipe.ingredients %>"></textarea><br><br>
+                <textarea type="comment" id="ingredients" class="materialize-textarea" name="recipe[ingredients]"><%= @recipe.ingredients %></textarea> <br><br>
             </div>   
         </div> 
         <br>  
             <div class="row">
                 <div class= "input-field col s12">       
                      <label for="instructions"><h5 class="bold">Instructions:</h5></label><br>
-                      <textarea name="recipe[instructions]" id="instructions" class="materialize-textarea" value="<%= @recipe.instructions %>">
-                    </textarea><br>
+                      <textarea type="comment" id="instructions" class="materialize-textarea" name="recipe[instructions]"><%= @recipe.instructions %></textarea><br>
                     <input type="submit" value="Update Recipe">
                     <br> <br>
                 </div>  
