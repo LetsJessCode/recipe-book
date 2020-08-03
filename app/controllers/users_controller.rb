@@ -1,4 +1,5 @@
 class UserController < ApplicationController
+    use Rack::Flash
   
 
     get '/signup' do  #WORKING
@@ -6,12 +7,13 @@ class UserController < ApplicationController
     end
 
     post '/signup' do #WORKING
-        @user = User.new(params[:user])
+      @user = User.new(params[:user])
         if @user.save
           session[:user_id] = @user.id
           redirect '/recipes'
         else
-           erb :'recipes/new'
+            flash.now[:error] = @user.errors.full_messages
+           erb :'users/new'
         end
     end
 end 

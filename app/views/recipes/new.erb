@@ -3,44 +3,44 @@
 
 <h4>Enter new recipe below:</h4><br><br><br>
 <form action="/recipes" method="post">
-<label for="recipe name">Name of Recipe:</label>
-<input type="text" name="recipe[name]" placeholder="Ex. Grilled-Cheese" id="name">
-<label for="meal_type">Meal Type:</label>
-<input type="text" name="recipe[meal_type]" placeholder="Lunch" id="meal_type"><br><br>
-    </div>
-
-    
-    <div class="col s4">
-       
+    <input type="text" name="recipe[name]" placeholder="Ex. Grilled-Cheese" id="name">
+    <label for="meal_type">Meal Type:</label>
+    <input type="text" name="recipe[meal_type]" placeholder="Lunch" id="meal_type"><br><br>
+    <div class="row">
+     <div class="col s12 m4 l3">
         <label for="prep_time"><h5 class="bold">Prep Time:</h5></label><br>
         <input type="integer" name="recipe[prep_hr]" placeholder="hr" id="prep_hr"><br>
-        <input type="integer" name="recipe[prep_min]" placeholder="5 min" id="prep_min"><br><br>
-        <label for="time"><h5 class="bold">Cooking Time:</h5></label><br>
-        <input type="integer" name="recipe[time_hr]" placeholder="hr" id="time_hr">
-        <input type="integer" name="recipe[time_min]" placeholder="15 min" id="time_min"><br><br>
-        
-     </div>
-
-     <div class="col s4">
-        <label for="servings"><h5 class="bold">Serving(s):</h5></label>
-        <input type="integer" name="recipe[servings]" placeholder="2" id="servings"><br><br>
-        <label for="ingredients"><h5 class="bold">Ingredient(s):</h5></label><br><br>
-        <textarea name="recipe[ingredients]" id="ingredients" cols="40" rows="10" placeholder="5 tbsp. butter, softened, divided. 4 slices of sourdough bread.
-        2 c. cheddar"></textarea><br><br>
-      </div>
-</div>
-<br>          
-<label for="instructions"><h5 class="bold">Instructions:</h5></label><br><br>
-<textarea name="recipe[instructions]" id="instructions" cols="4" rows="30" placeholder="1. Spread 1 tablespoon butter on one side of each slice of bread. With butter side down, top each slice of bread with about ½ cup cheddar. 
-2. In a skillet over medium heat, melt 1 tablespoon butter. Add two slices of bread, butter side down. Cook until bread is golden and cheese is starting to melt, about 2 minutes. Flip one piece of bread on top of the other and continue to cook until cheese is melty, about 30 seconds more. 
-3. Repeat for the second sandwich, wiping skillet clean if necessary."></textarea><br><br>
-
-<input type="submit" value="Create Recipe">
+        <input type="integer" name="recipe[prep_min]" placeholder="min" id="prep_min"><br><br>
+        </div>
+        <div class="row">
+            <div class="col s12 m4 l3">
+                <label for="time"><h5 class="bold">Cooking Time:</h5></label><br>
+                <input type="integer" name="recipe[time_hr]" placeholder="hr" id="time_hr"><br>
+                <input type="integer" name="recipe[time_min]" placeholder=" min" id="time_min"><br><br>  
+            </div>
+            <div class="col s12 m3">
+                <label for="servings"><h5 class="bold">Serving(s):</h5></label><br>
+                <input type="integer" name="recipe[servings]" placeholder="" id="servings">
+            </div>
+     <div class="row">
+        <div class="col s12 m3">
+            <div class="input-field col s12">
+             <label for="ingredients"><h5 class="bold">Ingredient(s):</h5></label><br><br>
+                <textarea name="recipe[ingredients]" id="ingredients" class="materialize-textarea" placeholder="Enter ingredients here..."></textarea><br><br>
+            </div>   
+        </div> 
+        <br>  
+         <div class="row">
+             <div class= "col s12 ">       
+                <label for="instructions"><h5 class="bold">Instructions:</h5></label>
+                 <textarea name="recipe[instructions]" id="instructions" cols="4" rows="30" class="materialize-textarea">
+                    </textarea><br><br>
+                    <input type="submit" value="Create Recipe">
+                </div> 
+            </div>  
+        </div>
+    </div>
 </form>
-</div>
-
-
-
       <%# t.text  :name
       t.integer :time_min
       t.integer :time_hr

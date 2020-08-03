@@ -1,4 +1,4 @@
 class Recipe < ActiveRecord::Base
-    belongs_to :users
+    belongs_to :user
     validates :name, presence: true 
 end

@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
- 
+ use Rack::Flash
 
     get '/recipes' do #working!!!
         @recipes = current_user.recipes
@@ -17,6 +17,7 @@ class RecipesController < ApplicationController
         if @recipe.save
                 redirect '/recipes'
       else
+        flash.now[:error] = @recipe.errors.full_messages
              erb :'recipes/new'
         end 
     end
@@ -33,6 +34,7 @@ class RecipesController < ApplicationController
     get '/recipes/:id/edit' do #working!!!
         set_recipes
         if current_user 
+            
             erb :'recipes/edit'
         else
             redirect '/recipes'
