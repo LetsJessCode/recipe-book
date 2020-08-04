@@ -1,26 +1,28 @@
-<h1>Welcome to Your Virtual Cookbook</h1>
-
-<h3>Please enter your name and create username and password below.</h3>  
+<h2 class="center">Let's create your account.</h2>
+<h5 class="center">Please Signup Below</h5>  
 
 <div class="row">
   <form class="col s12" action="/signup" method="post">
-    <div class="row">
-      <div class="input-field col s6">
-        <label for="name">Name:</label>
-           <input type="text" name="user[name]" id="name"><br>
-      <div>
-      <div class="input-field col s6">
-        <label for="username">Create Username:</label>
-        <input type="text" name="user[username]" id="username">
+    <div class="row center">
+      <div class="input-field col s12 l4">
+        <i class="material-icons prefix"style="margin-top: 6px; margin-right: 3px">person</i>
+        <label for="icon_prefix">Name:</label>
+           <input type="text" name="user[name]" id="name" style="margin-right: 1px">
       </div>
-    </div>
-    <div class="row">
-        <div class="input-field col s6">
-        <label for="password">Create Password:</label>
+      <div class="row">
+        <div class="input-field col s12 l4">
+        <i class="material-icons prefix" style="margin-top: 6px; margin-left: 2px">assignment_ind</i>
+          <label for="icon_prefix">Username:</label>
+          <input type="text" name="user[username]" id="username">
+        </div> 
+      <div class="row">
+        <div class="input-field col s12 l4">
+        <i class="material-icons prefix" style="margin-top: 6px; margin-left: 6px">lock</i>
+        <label for="password">Password:</label>
         <input type="password" name="user[password]" id="password">
       </div>
     </div>
-
+  </div>  
   <button class="btn waves-effect waves-light grey darken-1" type="submit" name="action">Create Account
     <i class="material-icons right">send</i>
   </button>
