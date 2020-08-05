@@ -1,6 +1,6 @@
 class UserController < ApplicationController
     use Rack::Flash
-  
+   
 
     get '/signup' do  #WORKING
         erb :'users/new'

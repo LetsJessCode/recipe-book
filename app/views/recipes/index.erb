@@ -1,24 +1,24 @@
  <h1> <%= current_user.name %>'s Recipe Index </h1>
 <hr>
 <div class="row">
-<h4><a href="/recipes/new"><i class="material-icons">add_circle</i> Add Recipe</a></h4>
+ <h4><a href="/recipes/new"><i class="material-icons">add_circle</i> Add Recipe</a></h4>
   <% @recipes.each do |recipe|%>
- <div class="col s12 m6">
- <div class="card">
-    <div class="card-image waves-effect waves-block waves-light grey lighten">
-      <img class="activator" src="https://i.pinimg.com/236x/66/3e/94/663e94ce4f208e68f08d096cfe293f49.jpg">
-    </div>
-    <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4"><%= recipe.name %><i class="material-icons right">more_vert</i></span>
-      <p><a href="/recipes/<%= recipe.id %>">View Recipe</a></p>
-      <p><a href="/recipes/<%= recipe.id %>/edit">Update Recipe</a></p>
-    </div>
-    <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4">More about <%= recipe.name %>  <i class="material-icons right">close</i></span>
-      <h6 class="bold">Ingredients: </h6><hr>
-      <p><%= recipe.ingredients %></p>  
+  <div class="col s12 m6">
+    <div class="card">
+      <div class="card-image waves-effect waves-block waves-light grey lighten">
+       <img class="activator" src="https://i.pinimg.com/236x/66/3e/94/663e94ce4f208e68f08d096cfe293f49.jpg">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4"><%= recipe.name %><i class="material-icons right">more_vert</i></span>
+        <p><a href="/recipes/<%= recipe.id %>">View Recipe</a></p>
+        <p><a href="/recipes/<%= recipe.id %>/edit">Update Recipe</a></p>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">More about <%= recipe.name %>  <i class="material-icons right">close</i></span>
+        <h6 class="bold">Ingredients: </h6><hr>
+        <p><%= recipe.ingredients %></p>  
+      </div>
     </div>
   </div>
-  </div>
- <% end %> 
+  <% end %>
 </div>

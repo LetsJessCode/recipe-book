@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
  use Rack::Flash
+ 
 
     get '/recipes' do #working!!!
         @recipes = current_user.recipes
@@ -34,7 +35,6 @@ class RecipesController < ApplicationController
     get '/recipes/:id/edit' do #working!!!
         set_recipes
         if current_user 
-            
             erb :'recipes/edit'
         else
             redirect '/recipes'

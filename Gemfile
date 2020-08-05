@@ -13,6 +13,7 @@ gem 'bcrypt'
 gem 'tux'
 gem 'dotenv'
 gem 'rack-flash3'
+gem 'colorize'
 
 group :test do
   gem 'rspec'
